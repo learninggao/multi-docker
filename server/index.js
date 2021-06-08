@@ -72,6 +72,7 @@ app.post("/values", async (req, res) => {
 });
 
 (async () => {
+  await pgClient.query("CREATE TABLE IF NOT EXISTS values (number INT)");
   app.listen(5000, (err) => {
     console.log("Listening");
   });
